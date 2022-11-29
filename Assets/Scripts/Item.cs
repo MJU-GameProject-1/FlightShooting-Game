@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ItemType { PowerUp = 0, Boom, HP };
+public enum ItemType { PowerUp = 0, Boom, HP, Ice };
 
 public class Item : MonoBehaviour
 {
@@ -43,6 +43,13 @@ public class Item : MonoBehaviour
                 break;
             case ItemType.HP:
                 player.GetComponent<PlayerHP>().CurrentHP += 2;
+                break;
+            case ItemType.Ice:
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                foreach (GameObject enemy in enemies)
+                {
+                    enemy.GetComponent<Movement2D>().StartCoroutine("Freeze");
+                }
                 break;
         }
     }

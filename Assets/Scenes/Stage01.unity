@@ -281,6 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   moveDirection: {x: 0, y: 0, z: 0}
+  isFrozen: 0
 --- !u!212 &107367189
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -768,6 +769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   moveDirection: {x: 0, y: 0, z: 0}
+  isFrozen: 0
 --- !u!212 &304601037
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1218,7 +1220,7 @@ GameObject:
   - component: {fileID: 827482708}
   m_Layer: 0
   m_Name: EnemySpawner
-  m_TagString: Untagged
+  m_TagString: EnemySpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1236,7 +1238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: 94ae66f1788fcaa4baf8256c24e810e8, type: 2}
-  enemyPrefab: {fileID: 4303356868194380096, guid: c530b1e76b452454d8a12819aa972eda, type: 3}
+  enemyPrefab: {fileID: 7262464595697969127, guid: c530b1e76b452454d8a12819aa972eda, type: 3}
   enemyHPSliderPrefab: {fileID: 1385283239812284155, guid: 62255a43bf0d0634da5451b04818f825, type: 3}
   canvasTransform: {fileID: 265692177}
   bgmController: {fileID: 2142995699}
@@ -1244,7 +1246,8 @@ MonoBehaviour:
   panelBossHP: {fileID: 1638934625}
   boss: {fileID: 107367185}
   spawnTime: 0.35
-  maxEnemyCount: 5
+  maxEnemyCount: 100
+  isPaused: 0
 --- !u!4 &827482709
 Transform:
   m_ObjectHideFlags: 0

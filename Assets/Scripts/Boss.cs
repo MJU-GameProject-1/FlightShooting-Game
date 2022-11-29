@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public enum BossState { MoveToApperPoint = 0, Phase01, Phase02, Phase03 }
+public enum BossState { MoveToApperPoint = 0, Phase01,Phase02, Phase03}
 
 public class Boss : MonoBehaviour
 {
@@ -57,6 +57,13 @@ public class Boss : MonoBehaviour
             yield return null;
         }
     }
+    private void LateUpdate()
+    {
+        // 보스 캐릭터가 화면 범위 밖으로 나가지 못하도록 설정
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, stageData.LimitMin.x, stageData.LimitMax.x),
+                                        Mathf.Clamp(transform.position.y, stageData.LimitMin.y, stageData.LimitMax.y));
+    }
+
     private IEnumerator Phase01()
     {
         //원 형태의 방사 공격 시작

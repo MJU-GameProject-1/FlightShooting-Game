@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AttackType { CircleFire = 0, SingleFireToCenterPosition }
+public enum AttackType { CircleFire = 0, SingleFireToCenterPosition}
 
 public class BossWeapon : MonoBehaviour
 {
+    
     [SerializeField]
     private GameObject projectilePrefab; // 공격할 때 생성되는 발사체 프리팹
-
+ 
     public void StartFiring(AttackType attackType)
     {
         // attackType 열거형의 이름과 같은 코루틴을 실행
@@ -22,7 +23,7 @@ public class BossWeapon : MonoBehaviour
 
     private IEnumerator CircleFire()
     {
-        float attackRate = 0.5f;            // 공격 주기
+        float attackRate = 1.2f;            // 공격 주기
         int count = 30;                      // 발사체 생성 개수
         float intervalAngle = 360 / count;    // 발사체 사이의 각도
         float weightAngle = 0;              // 가중되는 각도 (항상 같은 위치로 발사하지 않도록 설정)
@@ -50,7 +51,7 @@ public class BossWeapon : MonoBehaviour
     private IEnumerator SingleFireToCenterPosition()
     {
         Vector3 targetPosition = Vector3.zero; // 목표 위치 중앙
-        float attackRate = 0.1f;
+        float attackRate = 0.2f;
 
         while (true)
         {   // 발사체 생성

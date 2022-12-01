@@ -4,31 +4,30 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class TimerViewer : MonoBehaviour
+public class TimeViewer : MonoBehaviour
 {
-    private PlayerController playerController;
+    public GameObject Player;
+    private Movement2D movement2D;
+    private Weapon weapon;
+    private Animator animator;
     [SerializeField]
     private TextMeshProUGUI textTime;
     float time = 100.0f;
-
-    public void SetUp(PlayerController playerController)
-    {
-        this.playerController = playerController;
-    }
-
     private void Awake()
     {
+        Player = GameObject.Find("Player");
         this.textTime = GetComponent<TextMeshProUGUI>();
+        animator = GetComponent<Animator>();
     }
 
-    private void Update()
+    public void Update()
     {
         this.time -= Time.deltaTime;
-        textTime.text = "Time " + this.time.ToString("F1");
+        textTime.text = "Time " + Mathf.Round(time);
         if (this.time < 0)
         {
             this.time = 0;
-            SceneManager.LoadScene("GameOver");
+            Player.GetComponent<PlayerController>().OnDie();
         }
     }
 }

@@ -17,22 +17,22 @@ public class PlayerController : MonoBehaviour
     private Movement2D movement2D;
     private Weapon weapon;
     private Animator animator;
-
     private int score;
+   
     public int Score
     {
         //score 값이 음수가 되지 않도록
         set => score = Mathf.Max(0, value);
         get => score;
     }
-
+    
     private void Awake()
     {
         movement2D = GetComponent<Movement2D>();
         weapon = GetComponent<Weapon>();
         animator = GetComponent<Animator>();
     }
-
+   
     private void Update()
     {
         //플레이어가 사망 애니메이션 재생 중일 때 이동, 공격이 불가능하게 설정

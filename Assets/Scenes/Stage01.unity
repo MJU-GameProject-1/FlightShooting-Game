@@ -233,7 +233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7cbe7b0dc3dbd4a97919ee16d43efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
   stageData: {fileID: 11400000, guid: 94ae66f1788fcaa4baf8256c24e810e8, type: 2}
   explosionPrefab: {fileID: 97657914454869054, guid: 26d302a1de2e8764783c86c28f7c84ab, type: 3}
   playerController: {fileID: 304601035}
@@ -1253,6 +1252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0df64efe32ebf44aa7bc3ee1a9b0f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   textTime: {fileID: 0}
 --- !u!1 &761933351
 GameObject:

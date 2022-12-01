@@ -9,6 +9,7 @@ public class PlayerHP : MonoBehaviour
     private float currentHP;
     private SpriteRenderer spriteRenderer;
     private PlayerController playerController;
+    public bool isInvincible = false;
 
     public float MaxHP => maxHP; //maxHP변수에 접근할 수 있는 프로퍼티(Get만 가능)
     public float CurrentHP // currentHP변수에 접근할 수 있는 프로퍼티 (Set, Get 가능)
@@ -26,11 +27,17 @@ public class PlayerHP : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        //현재 체력을 damage만큼 감소
-        currentHP -= damage;
-
-        StopCoroutine("HitColorAnimation");
-        StartCoroutine("HitColorAnimation");
+        if (isInvincible)
+        {
+            currentHP -= 0;
+        } 
+        else 
+        {
+            //현재 체력을 damage만큼 감소
+            currentHP -= damage;
+            StopCoroutine("HitColorAnimation");
+            StartCoroutine("HitColorAnimation");
+        }
 
         if ( currentHP <= 0 )
         {
@@ -48,6 +55,13 @@ public class PlayerHP : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         //플레이어의 색상을 원래 색상 하얀색으로
         spriteRenderer.color = Color.white;
+    }
+
+    public IEnumerator Invincible()
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(3);
+        isInvincible = false;
     }
 
 }

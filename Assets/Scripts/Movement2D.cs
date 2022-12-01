@@ -5,18 +5,34 @@ using UnityEngine;
 public class Movement2D : MonoBehaviour
 {
     [SerializeField]
-    private float moveSpeed = 0.0f;
+    public float moveSpeed = 0.0f;
     [SerializeField]
     private Vector3 moveDirection = Vector3.zero;
+    [SerializeField]
+    private bool isFrozen = false;
 
     private void Update()
     {
+        if (isFrozen)
+        {
+            return;
+        }
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
     }
 
     public void MoveTo(Vector3 direction)
     {
         moveDirection = direction;
+    }
+
+    public IEnumerator Freeze()
+    {
+        EnemySpawner enemySpawner = GameObject.FindGameObjectWithTag("EnemySpawner").GetComponent<EnemySpawner>();
+        enemySpawner.SetPause(true);
+        isFrozen = true;
+        yield return new WaitForSeconds(1);
+        enemySpawner.SetPause(false);
+        isFrozen = false;
     }
 }
 

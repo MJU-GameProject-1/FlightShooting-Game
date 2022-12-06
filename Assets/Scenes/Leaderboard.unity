@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxRankCount: 6
-  textPrefab: {fileID: 1444109949118172063, guid: c2e87896626282b459d2527f2085fb8f, type: 3}
+  textPrefab: {fileID: 6043221446424682429, guid: 287a3f6ac98cc6f43aee80fc88205ef0, type: 3}
   panelRankInfo: {fileID: 947020855}
 --- !u!4 &1749391496
 Transform:

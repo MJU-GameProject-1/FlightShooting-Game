@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f8bc17f3f57ef4893d8b1f3fc62e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 3
   scorePoint: 100
   explosionPrefab: {fileID: 3302527851552341598, guid: 38a9887ee9b1077459a59428491cd36b, type: 3}
   itemPrefabs:
@@ -141,6 +141,8 @@ MonoBehaviour:
   - {fileID: 632242723732647072, guid: e9810ad1ae822cb4597c01aa5d052e8f, type: 3}
   - {fileID: 1869059469346165287, guid: 7b14687651361944ca38fdc1540ab4d0, type: 3}
   - {fileID: 7945055744391991283, guid: edd655c560bb5d04287e58d97cc5950f, type: 3}
+  - {fileID: 8552940881044859866, guid: 27b10cb5eded23a47a104f07694a7e47, type: 3}
+  - {fileID: 3738535313760244458, guid: 0459f7d7d123f4a49a2c45bb12543097, type: 3}
 --- !u!114 &1215901825368114383
 MonoBehaviour:
   m_ObjectHideFlags: 0

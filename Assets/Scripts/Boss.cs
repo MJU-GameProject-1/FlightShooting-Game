@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public enum BossState { MoveToApperPoint = 0, Phase01,Phase02, Phase03}
+public enum BossState {MoveToApperPoint = 0, Phase01,Phase02, Phase03, Phase04}
 
 public class Boss : MonoBehaviour
 {
@@ -67,16 +67,16 @@ public class Boss : MonoBehaviour
     private IEnumerator Phase01()
     {
         //원 형태의 방사 공격 시작
-        bossweapon.StartFiring(AttackType.CircleFire);
+        bossweapon.StartFiring(AttackType.Attack);
 
         while (true)
         {
             while (true)
-            {   // 보스의 현재 체력이 70% 이하가 되면
-                if (bossHP.CurrentHP <= bossHP.MaxHP * 0.7f)
+            {   // 보스의 현재 체력이 75% 이하가 되면
+                if (bossHP.CurrentHP <= bossHP.MaxHP * 0.75f)
                 {
                     // 원 방사 형태의 공격 중지
-                    bossweapon.StopFiring(AttackType.CircleFire);
+                    bossweapon.StopFiring(AttackType.Attack);
                     // phase02로 변경
                     ChangeState(BossState.Phase02);
                 }
@@ -85,6 +85,26 @@ public class Boss : MonoBehaviour
         }
     }
     private IEnumerator Phase02()
+    {
+        //원 형태의 방사 공격 시작
+        bossweapon.StartFiring(AttackType.HalfCircleFire);
+
+        while (true)
+        {
+            while (true)
+            {   // 보스의 현재 체력이 50% 이하가 되면
+                if (bossHP.CurrentHP <= bossHP.MaxHP * 0.5f)
+                {
+                    // 원 방사 형태의 공격 중지
+                    bossweapon.StopFiring(AttackType.HalfCircleFire);
+                    // phase02로 변경
+                    ChangeState(BossState.Phase03);
+                }
+                yield return null;
+            }
+        }
+    }
+    private IEnumerator Phase03()
         {
             // 플레이어 위치를 기준으로 단일 발사체 공격 시작
             bossweapon.StartFiring(AttackType.SingleFireToCenterPosition);
@@ -101,27 +121,27 @@ public class Boss : MonoBehaviour
                     direction *= -1;
                     movement2D.MoveTo(direction);
                 }
-                // 보스의 현재 체력이 30%이하가 되면
+                // 보스의 현재 체력이 25%이하가 되면
                 if (bossHP.CurrentHP <= bossHP.MaxHP * 0.3f)
             {
                 // 플레이어 위치를 기준으로 단일 발사체 공격 시작
                 bossweapon.StopFiring(AttackType.SingleFireToCenterPosition);
                 // phase03으로 변경
-                ChangeState(BossState.Phase03);
+                ChangeState(BossState.Phase04);
             }
             yield return null;
 
             }
         }
-    private IEnumerator Phase03()
+    private IEnumerator Phase04()
     {
         //  원 방사 형태의 공격 시작
-        bossweapon.StartFiring(AttackType.CircleFire);
+        bossweapon.StartFiring(AttackType.HalfCircleFire);
         // 플레이어 위치를 기준으로 단일 발사체 공격 시작
         bossweapon.StartFiring(AttackType.SingleFireToCenterPosition);
 
-        // 처음 이동 방향을 오른쪽으로 설정
-        Vector3 direction = Vector3.right;
+        // 처음 이동 방향을 왼쪽으로 설정
+        Vector3 direction = Vector3.left;
         movement2D.MoveTo(direction);
 
         while (true)

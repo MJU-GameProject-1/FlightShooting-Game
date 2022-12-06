@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ItemType { PowerUp = 0, Boom, HP, Ice };
+public enum ItemType { PowerUp = 0, Boom, HP, Ice, SpeedUp, Invincible };
 
 public class Item : MonoBehaviour
 {
@@ -24,9 +24,9 @@ public class Item : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            // ¾ÆÀÌÅÛ È¹µæ ½Ã È¿°ú
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¹ï¿½ï¿½ ï¿½ï¿½ È¿ï¿½ï¿½
             Use(collision.gameObject);
-            // ¾ÆÀÌÅÛ ¿ÀºêÁ§Æ® »èÁ¦
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
             Destroy(gameObject);
         }
     }
@@ -50,6 +50,12 @@ public class Item : MonoBehaviour
                 {
                     enemy.GetComponent<Movement2D>().StartCoroutine("Freeze");
                 }
+                break;
+            case ItemType.SpeedUp:
+                player.GetComponent<Movement2D>().moveSpeed += 1.0f;
+                break;
+            case ItemType.Invincible:
+                player.GetComponent<PlayerHP>().StartCoroutine("Invincible");
                 break;
         }
     }

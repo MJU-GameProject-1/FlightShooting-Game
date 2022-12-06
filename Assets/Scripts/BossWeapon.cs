@@ -6,7 +6,7 @@ public enum AttackType { HalfCircleFire = 0, SingleFireToCenterPosition,Attack}
 
 public class BossWeapon : MonoBehaviour
 {
-    public float speed = 1;
+    public float speed;
     public GameObject Player;
 
     [SerializeField]
@@ -30,7 +30,7 @@ public class BossWeapon : MonoBehaviour
 
     private IEnumerator HalfCircleFire()
     {
-        float attackRate = 1.2f;            // 공격 주기
+        float attackRate = 1.5f;            // 공격 주기
         int count = 30;                      // 발사체 생성 개수
         float intervalAngle = -180 / count;    // 발사체 사이의 각도
         float weightAngle = 0;              // 가중되는 각도 (항상 같은 위치로 발사하지 않도록 설정)
@@ -75,7 +75,7 @@ public class BossWeapon : MonoBehaviour
     }
     private IEnumerator Attack()
     {
-        float attackRate = 0.2f;
+        float attackRate = 0.3f;
         while (true)
         {
             GameObject clone = Instantiate(projectilePrefab, transform.position, Quaternion.identity);

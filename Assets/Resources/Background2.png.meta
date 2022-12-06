@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 878688b38f2d8fb4a85e02015e125f8e
+guid: ae35428be17d1e7478c5729e931de07b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -139,91 +139,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Stage02Boss_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 15
-        width: 69
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85c286282f7c4b94a9547073a345a495
-      internalID: -1541171326
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stage02Boss_1
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 14
-        width: 72
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2a4bc7f67b6c4d478fd0a4e0dfd25b4
-      internalID: -1843175215
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stage02Boss_2
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 7
-        width: 75
-        height: 73
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f7cbaac2ea07494c8cbc52e03d77303
-      internalID: -99628273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stage02Boss_3
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 2
-        width: 75
-        height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32e9699101d7fa94da2053953b93a426
-      internalID: -726126531
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -234,11 +150,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Stage02Boss_2: -99628273
-      Stage02Boss_1: -1843175215
-      Stage02Boss_3: -726126531
-      Stage02Boss_0: -1541171326
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

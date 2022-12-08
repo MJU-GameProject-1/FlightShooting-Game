@@ -30,6 +30,15 @@ public class PlayerController : MonoBehaviour
     
     private void Awake()
     {
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name.Equals("Stage01"))
+        {
+            Score = 0;
+        }
+        else
+        {
+            Score = PlayerPrefs.GetInt("Score");
+        }
         movement2D = GetComponent<Movement2D>();
         weapon = GetComponent<Weapon>();
         animator = GetComponent<Animator>();

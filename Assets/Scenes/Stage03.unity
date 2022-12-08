@@ -235,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: 94ae66f1788fcaa4baf8256c24e810e8, type: 2}
   explosionPrefab: {fileID: 97657914454869054, guid: 26d302a1de2e8764783c86c28f7c84ab, type: 3}
-  playerController: {fileID: 304601035}
+  playerController: {fileID: 304601041}
   nextSceneName: GameClear
   bossAppearPoint: 2.5
 --- !u!60 &107367187
@@ -677,9 +677,9 @@ GameObject:
   - component: {fileID: 304601038}
   - component: {fileID: 304601037}
   - component: {fileID: 304601036}
-  - component: {fileID: 304601035}
   - component: {fileID: 304601034}
   - component: {fileID: 304601033}
+  - component: {fileID: 304601041}
   - component: {fileID: 304601032}
   - component: {fileID: 304601039}
   - component: {fileID: 304601040}
@@ -743,23 +743,6 @@ MonoBehaviour:
   attackRate: 0.1
   maxAttackLevel: 3
   boomPrefab: {fileID: 4760086352857869637, guid: 96c2c487ad01c45498b6677ff27e928d, type: 3}
---- !u!114 &304601035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 304601031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a1247d91630920429e1bf635ab796e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextSceneName: GameOver
-  stageData: {fileID: 11400000, guid: 94ae66f1788fcaa4baf8256c24e810e8, type: 2}
-  keyCodeAttack1: 32
-  keyCodeAttack2: 120
-  keyCodeBoom: 122
 --- !u!114 &304601036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,6 +860,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &304601041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304601031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1247d91630920429e1bf635ab796e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSceneName: GameOver
+  stageData: {fileID: 11400000, guid: 94ae66f1788fcaa4baf8256c24e810e8, type: 2}
+  keyCodeAttack1: 32
+  keyCodeAttack2: 120
+  keyCodeBoom: 122
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 525598383}
   - component: {fileID: 525598386}
   - component: {fileID: 525598385}
-  - component: {fileID: 525598384}
+  - component: {fileID: 525598387}
   m_Layer: 5
   m_Name: TextPlayerScore
   m_TagString: Untagged
@@ -1000,19 +1000,6 @@ RectTransform:
   m_AnchoredPosition: {x: 25, y: -70}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &525598384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525598382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1e21d09b8af351418a8c88d3fcb121d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerController: {fileID: 304601035}
 --- !u!114 &525598385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1110,6 +1097,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525598382}
   m_CullTransparentMesh: 1
+--- !u!114 &525598387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525598382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e21d09b8af351418a8c88d3fcb121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerController: {fileID: 304601041}
 --- !u!1 &630810802
 GameObject:
   m_ObjectHideFlags: 0
